@@ -1,0 +1,41 @@
+rule("Set burning status on Overtime")
+{
+	event
+	{
+		Ongoing - Each Player;
+		All;
+		All;
+	}
+
+	conditions
+	{
+		Match Time <= 0;
+	}
+
+	actions
+	{
+		Set Status(Event Player, Null, Burning, 9999);
+		Start Damage Over Time(Event Player, Null, 9999, 3);
+	}
+}
+
+rule("Stop Burning if point capture")
+{
+	event
+	{
+		Ongoing - Each Player;
+		All;
+		All;
+	}
+
+	conditions
+	{
+		Match Time > 0;
+	}
+
+	actions
+	{
+		Clear Status(Event Player, Burning);
+		Stop Damage Over Time(Last Damage Over Time ID);
+	}
+}
