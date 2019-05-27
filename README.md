@@ -1,6 +1,11 @@
 # Workshop Example
 Elo Hell Workshop Repo Example
 
+Available on the Elo Hell Workshop website
+https://workshop.elohell.gg/1Uf1MBVmm/Overtime_Burn
+
+Game code **3PYKJ**
+
 ## Overtime Burn
 This is a simple game mode that if a match is in overtime. It consist of two simple rules:
 
